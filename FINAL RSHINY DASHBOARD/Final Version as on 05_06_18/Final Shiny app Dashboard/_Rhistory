@@ -1,0 +1,512 @@
+options=list(dataMode="regions", gvis.listener.jscode=jscode))
+plot(J1)
+jscode <- "
++ var sel = chart.getSelection();
++ var row = sel[0].row;
++ var text = data.getValue(row,1);
++ alert(text);
+"
+J1 <- gvisGeoMap(UN, locationvar='Country', numvar='Total_Violent_fatalities',
+options=list(dataMode="regions", gvis.listener.jscode=jscode))
+plot(J1)
+Line2 <- gvisLineChart(UN, "Country", c("Fertility","Mortalilty"),
+options=list(
+series="[{targetAxisIndex: 0},
+{targetAxisIndex:1}]",
+vAxes="[{title:'Fertility'}, {title:'Mortality'}]"
+))
+plot(Line2)
+Line2 <- gvisLineChart(UN, "Year", c("Fertility","Mortalilty"),
+options=list(
+series="[{targetAxisIndex: 0},
+{targetAxisIndex:1}]",
+vAxes="[{title:'Fertility'}, {title:'Mortality'}]"
+))
+plot(Line2)
+Line2 <- gvisLineChart(UN, c("Afghanistan", "Iraq", "Syria", "Yemen"), c("Fertility","Mortalilty"),
+options=list(
+series="[{targetAxisIndex: 0},
+{targetAxisIndex:1}]",
+vAxes="[{title:'Fertility'}, {title:'Mortality'}]"
+))
+Line2 <- gvisLineChart(UN, Country==c("Afghanistan", "Iraq", "Syria", "Yemen"), c("Fertility","Mortalilty"),
+options=list(
+series="[{targetAxisIndex: 0},
+{targetAxisIndex:1}]",
+vAxes="[{title:'Fertility'}, {title:'Mortality'}]"
+))
+Line2 <- gvisLineChart(UN, UN$Country=c("Afghanistan", "Iraq", "Syria", "Yemen"), c("Fertility","Mortalilty"),
+options=list(
+series="[{targetAxisIndex: 0},
+{targetAxisIndex:1}]",
+vAxes="[{title:'Fertility'}, {title:'Mortality'}]"
+))
+Line2 <- gvisLineChart(UN, xvar= "Country", c("Fertility","Mortalilty"),
+options=list(
+series="[{targetAxisIndex: 0},
+{targetAxisIndex:1}]",
+vAxes="[{title:'Fertility'}, {title:'Mortality'}]"
+))
+plot(Line2)
+library(shiny); runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+runApp('H:/MPS ANALYTICS/Part2/Extra.R')
+library(shiny); runApp('H:/MPS ANALYTICS/Part2/Boxplot V1.R')
+runApp('H:/MPS ANALYTICS/Part2/Boxplot V1.R')
+library(shiny); runApp('H:/MPS ANALYTICS/Part2/Boxplot V1.R')
+library(shiny); runApp('H:/MPS ANALYTICS/Part2/Final Shiny app Dashboard/Main Dashboard.R')
+library(shiny); runApp('H:/MPS ANALYTICS/Part2/Main DashboardV2.R')
+runApp('H:/MPS ANALYTICS/Part2/Main DashboardV2.R')
+runApp('H:/MPS ANALYTICS/Part2/Main DashboardV2.R')
+library(shiny); runApp('H:/MPS ANALYTICS/Part2/Main Dashboard.R')
+Packages<- c("shiny", "stats", "rgdal", "forecast", "shinythemes", "shinyjs", "leaflet", "scales", "lattice", "dplyr", "devtools", "metaplotr", "data.table", "htmltools",
+"broman", "magrittr", "RColorBrewer", "networkD3", "shinydashboard", "ggplot2", "ggthemes", "plotly",
+"gplots", "htmlwidgets", "ggExtra", "highcharter", "lubridate", "sf", "geojsonio")
+runApp('H:/MPS ANALYTICS/Part2/Main DashboardV3.R')
+Packages<- c("shiny", "stats", "rgdal", "forecast", "shinythemes", "shinyjs", "leaflet", "scales", "lattice", "dplyr", "devtools", "metaplotr", "data.table", "htmltools",
+"broman", "magrittr", "RColorBrewer", "networkD3", "shinydashboard", "ggplot2", "ggthemes", "plotly",
+"gplots", "htmlwidgets", "ggExtra", "lubridate", "sf", "geojsonio")
+runApp('H:/MPS ANALYTICS/Part2/Main DashboardV3.R')
+Packages<- c("shiny", "stats", "rgdal", "forecast", "shinythemes", "shinyjs", "leaflet", "scales", "lattice", "dplyr", "devtools", "metaplotr", "data.table", "htmltools",
+"broman", "magrittr", "RColorBrewer", "networkD3", "shinydashboard", "ggplot2", "ggthemes", "plotly",
+"gplots", "htmlwidgets", "ggExtra", "sf", "geojsonio")
+runApp('H:/MPS ANALYTICS/Part2/Main DashboardV3.R')
+runApp('H:/MPS ANALYTICS/Part2/Main DashboardV3.R')
+runApp('H:/MPS ANALYTICS/Part2/Main DashboardV3.R')
+library(highcharter)
+install.packages("package_name", repos=c("http://rstudio.org/_packages", "http://cran.rstudio.com",dependencies=TRUE))
+library(highcharter)
+Packages<- c("shiny", "stats", "rgdal", "forecast", "shinythemes", "shinyjs", "leaflet", "scales", "lattice", "dplyr", "devtools", "metaplotr", "data.table", "htmltools",
+"broman", "magrittr", "RColorBrewer", "networkD3", "shinydashboard", "ggplot2", "ggthemes", "plotly",
+"gplots", "htmlwidgets", "ggExtra", "sf", "geojsonio")
+lapply(Packages, library, character.only = TRUE)
+warnings()
+lapply(Packages, library, character.only = TRUE)
+library(highcharter)
+library("stringi", lib.loc="~/R/win-library/3.4")
+install.packages(c("httpuv", "stringi"))
+library("stringi", lib.loc="~/R/win-library/3.4")
+install.packages("stringi")
+library("stringi", lib.loc="~/R/win-library/3.4")
+install.packages("stringi")
+install.packages("stringi", type = "source")
+install.packages("stringi", type = "source")
+utils:::menuInstallPkgs(type="source")
+install.packages(c("httpuv", "stringi"))
+Packages<- c("shiny", "stats", "rgdal", "forecast", "shinythemes", "shinyjs", "leaflet", "scales", "lattice", "dplyr", "devtools", "metaplotr", "data.table", "htmltools",
+"broman", "magrittr", "RColorBrewer", "networkD3", "shinydashboard", "ggplot2", "ggthemes", "plotly",
+"gplots", "htmlwidgets", "ggExtra", "sf", "geojsonio")
+lapply(Packages, library, character.only = TRUE)
+library(highcharter)
+runApp('H:/MPS ANALYTICS/Part2/Gift')
+library("highcharter", lib.loc="~/R/win-library/3.4")
+install.packages(c("httpuv", "stringi"))
+shiny::runApp('H:/MPS ANALYTICS/Part2/Gift')
+install.packages(c("httpuv", "stringi"))
+library(shiny); runApp('C:/Users/Ashok/Downloads/18-20180505T204307Z-001/R Shiny Dashboard Draft As of 05-04-18/appV1.R')
+runApp('C:/Users/Ashok/Downloads/18-20180505T204307Z-001/R Shiny Dashboard Draft As of 05-04-18/appV1.R')
+runApp('C:/Users/Ashok/Downloads/18-20180505T204307Z-001/R Shiny Dashboard Draft As of 05-04-18/appV1.R')
+runApp('C:/Users/Ashok/Downloads/18-20180505T204307Z-001/R Shiny Dashboard Draft As of 05-04-18/appV1.R')
+runApp('C:/Users/Ashok/Downloads/18-20180505T204307Z-001/R Shiny Dashboard Draft As of 05-04-18/appV1.R')
+runApp('C:/Users/Ashok/Downloads/18-20180505T204307Z-001/R Shiny Dashboard Draft As of 05-04-18/appV1.R')
+install.packages("rsconnect")
+library(rsconnect)
+rsconnect::setAccountInfo(name='unproject', token='E6F413F7C66209170818C3FC8FEDB38F', secret='ZUDCECvIG3qL4vXFfzIb+9OMzXaD5RTNsuaAmXtU')
+runApp('C:/Users/Ashok/Downloads/18-20180505T204307Z-001/R Shiny Dashboard Draft As of 05-04-18/appV1.R')
+version
+shiny::runApp('H:/MPS ANALYTICS/Part2/Final Shiny app Dashboard')
+install.packages("rsconnect")
+install.packages("rsconnect")
+install.packages("shinythemes")
+install.packages("DT")
+install.packages("shiny")
+install.packages("leaflet")
+install.packages("scales")
+install.packages("lattice")
+install.packages("dplyr")
+install.packages("devtools")
+install.packages("metaplotr")
+install.packages("data.table")
+install.packages("htmltools")
+install.packages("broman")
+install.packages("magrittr")
+install.packages("RColorBrewer")
+install.packages("networkD3")
+install.packages("shinydashboard")
+install.packages("ggplot2")
+install.packages("ggthemes")
+install.packages("plotly")
+install.packages("gplots")
+install.packages("htmlwidgets")
+install.packages("ggExtra")
+install.packages("broom")
+install.packages("highcharter")
+install.packages("tidyverse")
+install.packages("sf")
+install.packages("lubridate")
+install.packages("DT")
+install.packages("shiny")
+install.packages("leaflet")
+install.packages("dplyr")
+install.packages("magrittr")
+install.packages("shinydashboard")
+install.packages("plotly")
+install.packages("highcharter")
+install.packages("DT")
+install.packages("shiny")
+install.packages("leaflet")
+install.packages("dplyr")
+install.packages("magrittr")
+install.packages("plotly")
+install.packages("highcharter")
+install.packages("shinydashboard")
+install.packages("leaflet")
+install.packages("dplyr")
+install.packages("magrittr")
+install.packages("plotly")
+install.packages("shinydashboard")
+install.packages("highcharter")
+install.packages("plotly")
+install.packages("shinydashboard")
+library(shiny)
+library(rsconnect)
+library(shinythemes)
+library(DT)
+library(shiny)
+library(leaflet)
+library(scales)
+library(lattice)
+library(dplyr)
+install.packages("rsconnect")
+install.packages("rsconnect")
+install.packages("rsconnect")
+install.packages("shinythemes")
+install.packages("DT")
+install.packages("shiny")
+install.packages("leaflet")
+install.packages("scales")
+install.packages("lattice")
+install.packages("dplyr")
+install.packages("devtools")
+install.packages("metaplotr")
+install.packages("data.table")
+install.packages("htmltools")
+install.packages("broman")
+install.packages("magrittr")
+install.packages("RColorBrewer")
+install.packages("networkD3")
+install.packages("shinydashboard")
+install.packages("ggplot2")
+install.packages("ggthemes")
+install.packages("plotly")
+install.packages("gplots")
+install.packages("htmlwidgets")
+install.packages("ggExtra")
+install.packages("broom")
+install.packages("highcharter")
+install.packages("tidyverse")
+install.packages("sf")
+install.packages("lubridate")
+shiny::runApp('H:/MPS ANALYTICS/Part2/Final Shiny app Dashboard')
+library(tidyverse)
+remove.packages("tidyverse")
+install.packages("tidyverse")
+install.packages("tidyverse")
+library(tidyverse)
+install.packages("rsconnect")
+install.packages("shinythemes")
+install.packages("DT")
+install.packages("DT")
+install.packages("shiny")
+install.packages("tidyverse")
+install.packages("leaflet")
+install.packages("scales")
+install.packages("lattice")
+install.packages("dplyr")
+install.packages("devtools")
+install.packages("metaplotr")
+install.packages("data.table")
+install.packages("htmltools")
+install.packages("broman")
+install.packages("magrittr")
+install.packages("RColorBrewer")
+install.packages("networkD3")
+install.packages("shinydashboard")
+install.packages("ggplot2")
+install.packages("ggthemes")
+install.packages("plotly")
+install.packages("gplots")
+install.packages("htmlwidgets")
+install.packages("ggExtra")
+install.packages("broom")
+install.packages("highcharter")
+install.packages("sf")
+install.packages("lubridate")
+shiny::runApp('H:/MPS ANALYTICS/Part2/Final Shiny app Dashboard')
+library(tidyverse)
+runApp('H:/MPS ANALYTICS/Part2/Final Shiny app Dashboard')
+library(rlang)
+runApp('H:/MPS ANALYTICS/Part2/Final Shiny app Dashboard')
+shiny::runApp('H:/MPS ANALYTICS/Part2/Final Shiny app Dashboard')
+# install.packages("networkD3")
+# install.packages("shinydashboard")
+# install.packages("ggplot2")
+# install.packages("ggthemes")
+# install.packages("plotly")
+# install.packages("gplots")
+# install.packages("htmlwidgets")
+# install.packages("ggExtra")
+# install.packages("broom")
+# install.packages("highcharter")
+install.packages("tidyverse")
+install.packages("rsconnect")
+install.packages("shinythemes")
+install.packages("DT")
+library(DT)
+install.packages("shiny")
+install.packages("leaflet")
+install.packages("lattice")
+install.packages("dplyr")
+install.packages("devtools")
+install.packages("metaplotr")
+install.packages("data.table")
+install.packages("htmltools")
+install.packages("broman")
+install.packages("magrittr")
+install.packages("RColorBrewer")
+install.packages("networkD3")
+install.packages("shinydashboard")
+install.packages("ggplot2")
+install.packages("ggthemes")
+install.packages("plotly")
+install.packages("gplots")
+install.packages("htmlwidgets")
+install.packages("ggExtra")
+install.packages("broom")
+install.packages("highcharter")
+install.packages("tidyverse")
+install.packages("sf")
+install.packages("lubridate")
+shiny::runApp('H:/MPS ANALYTICS/Part2/Final Shiny app Dashboard')
+remove.packages(Packages)
+remove(Packages)
+remove(list = ls())
+setwd("H:/MPS ANALYTICS/Part2/Final Shiny app Dashboard/rsconnect")
+# remove(Packages)
+setwd("H:/MPS ANALYTICS/Part2/Final Shiny app Dashboard")
+ships<- read.csv("Violencedata_20APRL.csv")
+dataset <-read.csv("Final_Combined dataset.csv")
+ships <- ships[order(ships$Fatalities),]
+#class(ships)
+#str(ships)
+#ships <- ships[order(ships$Fatalities),]
+#ships <- ships[sample.int(nrow(ships), 10000),]
+ui<- navbarPage(strong("ARMED CONFLICT DASHBOARD"), id="nav",
+tabPanel("About",img(src='IMG_2155.JPG', align = "left"),
+fluidPage( theme = shinytheme("spacelab"), HTML(
+paste(
+'<br/>',
+p("Armed conflicts within the states are generally political conflicts involving citizens fighting for internal change.
+It involves a group of people who are armed and ready to fight for the goal of seizing governmental powers.
+This group may include militias and armed civilians along with the regular armies. These conflicts result in the
+collapse of state institutions mainly the police and judiciary. The fighting in conflicts are usually intermittent and
+generally does not occur on well-defined battlefields. The twentieth century saw an upward trend in the fatalities due
+to armed conflicts.", align= "justify"),'<br/>',
+p("This dashboard represents the effect of fatalities caused by armed conflict in middle eastern countries
+namely Afghanistan, Iraq, Syria, and Yemen. The basis for visualizations are the violent events recorded in a particular year
+resulting in the deaths and its effect on the GDP, Mortality, Fertility, Revenue from Natural Resources etc.", align= "justify"),'<br/>',
+h5("Download data using the Download Data button shown below\n"),
+h6("Note: ensure to include .csv while saving the file"), '<br/>'
+#h4("Thank you for using the app!")
+)),
+#img(src='Image1.png', height= "100px", width= "50%", align= "bottom right"),
+#Add a download button for dataset
+downloadButton("downloadData", "Download Data")
+#Add a link to github
+)
+),
+tabPanel("Data Summary and Resources ",img(src='IMG_2155.JPG', align = "left"),
+fluidPage( HTML(
+paste(
+'<br/>',
+h3("Data Summary"),'<br/>',
+p("Data presented in our charts contain detailed information regarding armed conflict events occuring in select regions around the world.
+Variables of interest include Location (countries, states, and cities where conflict events are occuring), Event Type (types of conflict
+activities or events occuring in various regions), Target (industries and organizations that are being targeted), Nationality of Target,
+Perpetrators (groups who are carrying out these armed conflict events), Weapon Type (weapons utilized during the events), Number of Fatalities
+caused by an event), and Date of specific events. Other variables include GDP, Fertility Rate, Trade Import Rate, and Trade Export Rate.
+For more information regarding variable selection and analysis, please refer to ", a("link to white paper"), "."), '<br/>',
+h3("Data Sources"),'<br/>',
+p("Click on the links below to be redirected to data sources"),
+p(a("1. Center for Systemic Peace", href = "http://www.systemicpeace.org/inscrdata.html", target = "_blank")),
+p(a("2. Global Terrorism Database", href = "https://www.start.umd.edu/gtd/", target = "_blank")),
+p(a("3. The Peace Research Institute Oslo", href = "https://www.prio.org/Data/Armed-Conflict/GEO-SVAC/", target = "_blank")),
+p(a("4. The World Bank Group", href = "https://data.worldbank.org/", target = "_blank")),
+p(a("5. United Nations Data", href = "http://data.un.org/", target = "_blank")),
+p(a("6. United Nations Development Programme", href = "http://hdr.undp.org/en/content/human-development-index-hdi", target = "_blank")), '<br/>'
+))
+)
+),
+tabPanel("Interactive map",
+h3("Map shows Lowest to Highest Number of Fatalities and Type of Events by Geographic Location", align="center"),
+h6("Caption: icons indicate clusters of events and fatalities. click icons to drill down. Drag map in any direction to view region of interest. ", align="center"),
+div(class="outer",
+# tags$head(
+#   # Include our custom CSS
+#   includeCSS("styles.css"),
+#   includeScript("gomap.js")
+# ),
+shinyUI(fluidPage(
+fluidRow(
+column(12, leaflet::leafletOutput("map"))),
+fluidRow(column(12, div(style = 'overflow-x: scroll',DT::dataTableOutput("tbl"))))
+)
+))),
+tabPanel("Data Visualizations",
+tabsetPanel(id = "tabSelected",
+tabPanel("Trend Graph",
+h3("Trend Graph Shows Change of Values with Time based on Selected Variables", align="center"),
+h6("Caption: option available to select country, select measure, and date range. ", align="center"),
+fluidPage(
+sidebarLayout(
+sidebarPanel(
+selectizeInput("filter1",
+"Select Country",
+choices = dataset$Country,
+selected = ""),
+selectizeInput("filter2",
+"Select Measure",
+choices = colnames(dataset[,c(8:11, 24:25)]),
+selected = "GDP"),
+dateRangeInput("date_range",
+label = "Date Range",
+min = "1960-01-01",
+max = "2016-12-31",
+start = "1960-01-01",
+end = "2016-12-31",
+format = "yyyy",
+startview = "decade")
+),
+mainPanel(highchartOutput("trendplot"))
+)
+)
+),
+tabPanel("Density Plot",
+h3("Density Plot Shows the Distribution of Data based on Selected Variables", align="center"),
+h6("Caption: option available to select country and measure. ", align="center"),
+fluidPage(
+sidebarLayout(
+sidebarPanel(
+selectInput("filter4",
+"Select Country",
+choices = ships$country,
+selected = "")
+),
+mainPanel(highchartOutput("densityplot"))
+)
+)
+),
+tabPanel("Scatter Plot",
+h3("Scatter Plot Shows Correlation between Number of Fatalities and other Variables of Interest", align="center"),
+h6("Caption: option available to filter by country, hover on icons to view x and y values, hover on line to view R value. ", align="center"),
+plotlyOutput('plot1', height= "400px"),
+hr(),
+fluidRow(
+column(3,
+h4("Correlation Explorer"),
+checkboxGroupInput("Country2", "Select Country", c("Afghanistan", "Iraq", "Syria", "Yemen"), selected = c("Afghanistan", "Iraq", "Syria", "Yemen") )
+),
+column(4, offset = 1,
+selectInput('x', 'X', choice = "Total_Violent_fatalities", names(dataset)[[25]]),
+selectInput('y', 'Y', choice= c("GDP", "Trade_Import", "Trade_Export"), names(dataset)[[8]])
+)
+)
+),
+tabPanel("Correlation Matrix",
+h3("Correlation Matrix Plot Shows Multiple Variables and there Correlation all in one Chart", align="center"),
+h6("Caption: colors indication whether the correlation is positive, negation, high, medium, or low. hover in each cell to view exact R value.", align="center"),
+fluidPage(
+highchartOutput("cormatrix"))
+),
+tabPanel("Box Plot",
+h3("Box Plot Shows Number of Fatalities Grouped by Event Type", align="center"),
+h6("Caption: option available to filter by country, use legend icons to select/unselect event type, hover on box plot to view descriptive statistics. ", align="center"),
+plotlyOutput('plot2', height= "400px"),
+hr(),
+fluidRow(
+column(3,
+h4("Box Plot Explorer"),
+checkboxGroupInput("Country3", "Select Country", c("Afghanistan", "Iraq", "Syria", "Yemen"), selected = c("Afghanistan", "Iraq", "Syria", "Yemen") )
+),
+column(4, offset = 1,
+selectInput('x1', 'X', choice = "Fatalities", names(ships)[[16]]),
+selectInput('y1', 'Y', choice= c("Event_type","Weapon_Type", "Nationality_of_Target"), names(ships)[[6]])
+)
+)
+),
+tabPanel("Sankey Diagram",
+h3("Chart depicts Frequency from Highest to Lowest Number of Events with Associated link to Geographic Location", align="center"),
+h6("Caption: for example, the largest node corresponds to bombings/explossions and associated with IRQ, and we can still visualize connections to other major events. ", align="center"),
+fluidPage(
+sankeyNetworkOutput("SankeyDiagram", width = "100%", height= "500px" )))
+)
+),
+tabPanel("Data Table",
+h3("Table Provides View of Entire Dataset for Data Exploration", align="center"),
+h6("Caption: option available to search, sort, filter by country, filter by year, and select n entries. ", align="center"),
+fluidRow(
+column(3,
+selectInput("country1", label = strong("Country"), c("All Countries"="", list('Afghanistan', 'Iraq', 'Syria', 'Yemen')), multiple=TRUE)
+),
+column(3,
+conditionalPanel("input.country1",
+selectInput("events1", label = strong("Events"), c("All Events"="", list('Armed Assault', 'Bombing/Explosion', 'Unknown', 'Assassination', 'Hostage Taking (Kidnapping)', 'Facility/Infrastructure Attack', 'Sexual Violence', 'Hostage Taking (Barricade Incident)', 'Hijacking', 'Unarmed Assault')), multiple=TRUE)
+)
+),
+column(3,
+conditionalPanel("input.country1",
+selectInput("perpetrators1", label = strong("Perpetrators"), c("All Perpetrators"=""), multiple=TRUE)
+)
+)
+),
+fluidRow(
+column(1,
+numericInput("min", label = strong("Year (From)"), min = 1950, max = 2017, value = 1950)
+),
+column(1,
+numericInput("max", label = strong("Year (To)"), min=1950, max=2017, value=2017)
+)
+),
+hr(),
+DT::dataTableOutput("Violencetable")
+))

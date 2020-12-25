@@ -1,0 +1,375 @@
+setwd("H:/MPS ANALYTICS/Part2/Final Shiny app V1")
+shiny::runApp()
+library(shiny)
+library(leaflet)
+library(scales)
+library(lattice)
+library(dplyr)
+library(devtools)
+library(metaplotr)
+library(data.table)
+library(htmltools)
+library(broman)
+library(magrittr)
+library(RColorBrewer)
+library(networkD3)
+library(shinydashboard)
+library(ggplot2)
+library(ggthemes)
+library(plotly)
+library(gplots)
+library(htmlwidgets)
+library(ggExtra)
+library(broom)
+setwd("H:/MPS ANALYTICS/Part2/Final Shiny app V1")
+ships<- read.csv("Violencedata_20APRL.csv")
+ships <- ships[order(ships$Fatalities),]
+dataset <- read.csv("Final_Combined dataset.csv", stringsAsFactors = FALSE)
+ui<- navbarPage(strong("ARMED CONFLICT DASHBOARD"), id="nav",
+tabPanel("About",img(src='IMG_2155.JPG', align = "left"),
+mainPanel( HTML(
+paste(
+'<br/>',
+h3("This is my app!\n\n"),'<br/>',
+h4("Download your data using the choose file button\n\n"),'<br/>',
+h4("Thank you for using the app!")
+)),
+#Add a download button for dataset
+downloadButton('downloadData', 'Download data')
+#Add a link to github
+)
+),
+tabPanel("Interactive map",
+div(class="outer",
+tags$head(
+# Include our custom CSS
+includeCSS("styles.css"),
+includeScript("gomap.js")
+),
+shinyUI(fluidPage(
+fluidRow(
+column(12, leaflet::leafletOutput("map"))),
+fluidRow(column(12, DT::dataTableOutput("tbl")))
+)
+))),
+tabPanel("Data explorer",
+fluidRow(
+column(3,
+selectInput("country", label = strong("Country"), c("All Countries"="", list('Afghanistan', 'Iraq', 'Syria', 'Yemen')), multiple=TRUE)
+),
+column(3,
+conditionalPanel("input.country",
+selectInput("events", label = strong("Events"), c("All Events"="", list('Armed Assault', 'Bombing/Explosion', 'Unknown', 'Assassination', 'Hostage Taking (Kidnapping)', 'Facility/Infrastructure Attack', 'Sexual Violence', 'Hostage Taking (Barricade Incident)', 'Hijacking', 'Unarmed Assault')), multiple=TRUE)
+)
+),
+column(3,
+conditionalPanel("input.country",
+selectInput("perpetrators", label = strong("Perpetrators"), c("All Perpetrators"=""), multiple=TRUE)
+)
+)
+),
+fluidRow(
+column(1,
+numericInput("min", label = strong("Year (From)"), min = 1950, max = 2017, value = 1950)
+),
+column(1,
+numericInput("max", label = strong("Year (To)"), min=1950, max=2017, value=2017)
+)
+),
+hr(),
+DT::dataTableOutput("Violencetable")
+),
+tabPanel("Data Visualization",
+tabsetPanel(id = "tabSelected",
+tabPanel("Sankey Diagram",
+fluidRow(
+sankeyNetworkOutput("SankeyDiagram"))),
+tabPanel("Correlation Graph",
+fluidRow(
+column(3,
+h4("Correlation Explorer"),
+checkboxGroupInput("Country", "Select Country", c("Afghanistan", "Iraq", "Syria", "Yemen"), selected = c("Afghanistan", "Iraq", "Syria", "Yemen") )
+),
+column(4, offset = 1,
+selectInput('x', 'X', choice = "Total_Violent_fatalities", names(dataset)[[25]]),
+selectInput('y', 'Y', choice= c("GDP", "Mortalilty", "Fertility", "Total_natural_resources_rents_percentage_of_GDP", "Improved_water_source_percentage_of_population_with_access", "Trade_Import", "Trade_Export"), names(dataset)[[8]])
+)
+),
+hr(),
+plotlyOutput('plot', height= "500px")
+),
+tabPanel("Box Pot",
+fluidRow(
+column(3,
+h4("Box Plot Explorer"),
+checkboxGroupInput("Country1", "Select Country", c("Afghanistan", "Iraq", "Syria", "Yemen"), selected = c("Afghanistan", "Iraq", "Syria", "Yemen") )
+),
+column(4, offset = 1,
+selectInput('x1', 'X', choice = "Fatalities", names(ships)[[16]]),
+selectInput('y1', 'Y', choice= c("Event_type","Weapon_Type", "Nationality_of_Target"), names(ships)[[6]])
+)
+),
+hr(),
+plotlyOutput('plot', height= "500px")
+)
+)
+)
+)
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+library(shiny)
+library(leaflet)
+library(scales)
+library(lattice)
+library(dplyr)
+library(devtools)
+library(metaplotr)
+library(data.table)
+library(htmltools)
+library(broman)
+library(magrittr)
+library(RColorBrewer)
+library(networkD3)
+library(shinydashboard)
+library(ggplot2)
+library(ggthemes)
+library(plotly)
+library(gplots)
+library(htmlwidgets)
+library(ggExtra)
+library(broom)
+setwd("H:/MPS ANALYTICS/Part2/Final Shiny app V1")
+ships<- read.csv("Violencedata_20APRL.csv")
+ships<- read.csv("Violencedata_20APRL.csv", stringsAsFactors = FALSE)
+set.seed(100)
+ships <- ships[sample.int(nrow(ships), 10000),]
+ships <- ships[order(ships$Fatalities),]
+dataset <- read.csv("Final_Combined dataset.csv", stringsAsFactors = FALSE)
+ui<- navbarPage(strong("ARMED CONFLICT DASHBOARD"), id="nav",
+tabPanel("About",img(src='IMG_2155.JPG', align = "left"),
+mainPanel( HTML(
+paste(
+'<br/>',
+h3("This is my app!\n\n"),'<br/>',
+h4("Download your data using the choose file button\n\n"),'<br/>',
+h4("Thank you for using the app!")
+)),
+#Add a download button for dataset
+downloadButton('downloadData', 'Download data')
+#Add a link to github
+)
+),
+tabPanel("Interactive map",
+div(class="outer",
+tags$head(
+# Include our custom CSS
+includeCSS("styles.css"),
+includeScript("gomap.js")
+),
+shinyUI(fluidPage(
+fluidRow(
+column(12, leaflet::leafletOutput("map"))),
+fluidRow(column(12, DT::dataTableOutput("tbl")))
+)
+))),
+tabPanel("Data explorer",
+fluidRow(
+column(3,
+selectInput("country", label = strong("Country"), c("All Countries"="", list('Afghanistan', 'Iraq', 'Syria', 'Yemen')), multiple=TRUE)
+),
+column(3,
+conditionalPanel("input.country",
+selectInput("events", label = strong("Events"), c("All Events"="", list('Armed Assault', 'Bombing/Explosion', 'Unknown', 'Assassination', 'Hostage Taking (Kidnapping)', 'Facility/Infrastructure Attack', 'Sexual Violence', 'Hostage Taking (Barricade Incident)', 'Hijacking', 'Unarmed Assault')), multiple=TRUE)
+)
+),
+column(3,
+conditionalPanel("input.country",
+selectInput("perpetrators", label = strong("Perpetrators"), c("All Perpetrators"=""), multiple=TRUE)
+)
+)
+),
+fluidRow(
+column(1,
+numericInput("min", label = strong("Year (From)"), min = 1950, max = 2017, value = 1950)
+),
+column(1,
+numericInput("max", label = strong("Year (To)"), min=1950, max=2017, value=2017)
+)
+),
+hr(),
+DT::dataTableOutput("Violencetable")
+),
+tabPanel("Data Visualization",
+tabsetPanel(id = "tabSelected",
+tabPanel("Sankey Diagram",
+fluidRow(
+sankeyNetworkOutput("SankeyDiagram"))),
+tabPanel("Correlation Graph",
+fluidRow(
+column(3,
+h4("Correlation Explorer"),
+checkboxGroupInput("Country", "Select Country", c("Afghanistan", "Iraq", "Syria", "Yemen"), selected = c("Afghanistan", "Iraq", "Syria", "Yemen") )
+),
+column(4, offset = 1,
+selectInput('x', 'X', choice = "Total_Violent_fatalities", names(dataset)[[25]]),
+selectInput('y', 'Y', choice= c("GDP", "Mortalilty", "Fertility", "Total_natural_resources_rents_percentage_of_GDP", "Improved_water_source_percentage_of_population_with_access", "Trade_Import", "Trade_Export"), names(dataset)[[8]])
+)
+),
+hr(),
+plotlyOutput('plot', height= "500px")
+),
+tabPanel("Box Pot",
+fluidRow(
+column(3,
+h4("Box Plot Explorer"),
+checkboxGroupInput("Country1", "Select Country", c("Afghanistan", "Iraq", "Syria", "Yemen"), selected = c("Afghanistan", "Iraq", "Syria", "Yemen") )
+),
+column(4, offset = 1,
+selectInput('x1', 'X', choice = "Fatalities", names(ships)[[16]]),
+selectInput('y1', 'Y', choice= c("Event_type","Weapon_Type", "Nationality_of_Target"), names(ships)[[6]])
+)
+),
+hr(),
+plotlyOutput('plot', height= "500px")
+)
+)
+)
+)
+server <- shinyServer(function(session,input, output) {
+## Creating Map
+output$map <- leaflet::renderLeaflet({
+leaflet::leaflet(ships) %>%
+leaflet::addTiles(urlTemplate = "https://api.mapbox.com/styles/v1/ashoksoyal/cjgj3h2u400012rnvm99m8kjb/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYXNob2tzb3lhbCIsImEiOiJjamdlb3RpMmEwYzA1MnhwNHpzenNrY3J4In0.lAeyiXYmXJpsgQS89ryuLg",
+attribution = 'Maps by <a href="http://www.mapbox.com/">Mapbox</a>') %>%
+#addCircles(~Longitude, ~Latitude, radius= ~sqrt(Fatalities)*3000,
+#stroke=TRUE, fillOpacity=0.5, fillColor = ~Fatalities)
+addMarkers( ~Longitude, ~Latitude, label= ~as.character(Fatalities), clusterOptions= markerClusterOptions(), clusterId= "Countrycluster1") %>%
+setView(lng = 44.399648, lat = 32.032916, zoom = 5)
+})
+in_bounding_box <- function(data, lat, long, bounds) {
+data %>%
+dplyr::filter(Latitude > bounds$south & Latitude < bounds$north & Longitude < bounds$east & Longitude > bounds$west)
+}
+data_map <- reactive({
+if (is.null(input$map_bounds)){
+ships
+} else {
+bounds <- input$map_bounds
+in_bounding_box(ships, lat, long, bounds)
+}
+})
+output$tbl <- DT::renderDataTable({
+DT::datatable(data_map(), extensions = "Scroller", style = "bootstrap", class = "compact", width = "100%",
+options = list(deferRender = TRUE, scrollY = 300, scrollX= '400px', scroller = TRUE, dom = 'tp'))
+})
+## Data Explorer server ###########################################
+observe({
+EventType <- if (is.null(input$country)) character(0) else {
+filter(ships, country %in% input$country) %>%
+`$`('Event_type') %>%
+unique() %>%
+sort()
+}
+stillSelected <- isolate(input$events[input$events %in% ships$Event_type])
+updateSelectInput(session, "events", choices = ships$Event_type,
+selected = stillSelected)
+})
+observe({
+perpetrators <- if (is.null(input$country)) character(0) else {
+ships %>%
+filter(country %in% input$country,
+is.null(input$events) | ships$Event_type %in% input$events) %>%
+`$`('Perpetrators') %>%
+unique() %>%
+sort()
+}
+stillSelected <- isolate(input$perpetrators[input$perpetrators %in% ships$Perpetrators])
+updateSelectInput(session, "perpetrators", choices = ships$Perpetrators,
+selected = stillSelected)
+})
+output$Violencetable <- DT::renderDataTable({
+df <- ships %>%
+filter(
+is.null(input$country) | country %in% input$country,
+is.null(input$events) | Event_type %in% input$events,
+is.null(input$perpetrators) | Perpetrators %in% input$perpetrators,
+Year >= input$min,
+Year <= input$max
+) %>%
+mutate(Action = paste('<a class="go-map" href="" data-lat="', Latitude, '" data-long="', Longitude, '"><i class="fa fa-crosshairs"></i></a>', sep=""))
+action <- DT::dataTableAjax(session, df)
+DT::datatable(df, options = list(ajax = list(url = action)), escape = FALSE)
+})
+####Sankey Diagram####
+levels(ships$Event_type)
+clo1 <- nlevels(ships$Country_Code)
+clo2 <- nlevels(ships$Target)
+clo3 <- nlevels(ships$Event_type)
+clo4 <- clo1 + 1
+clo5 <- clo1 + clo2
+clo6 <- clo5 + 1
+clo7 <- clo5 + clo3
+allelement <- c(levels(ships$Country_Code),
+levels(ships$Target),
+levels(ships$Event_type))
+builtlink <- c()
+for (j in 1:clo1){
+for (k in clo4:clo5){
+aa <- sum(ships$Country_Code == allelement[j]  & ships$Target == allelement[k])
+builtlink <- c(builtlink, c(j-1, k-1, aa))
+}
+}
+for (m in clo4:clo5){
+for (n in clo6: clo7){
+zz <- sum(ships$Event_type == allelement[n]  & ships$Target == allelement[m])
+builtlink <- c(builtlink, c(m-1, n-1, zz))
+}
+}
+matrixlink <-matrix(builtlink, byrow = TRUE, ncol = 3)
+nodes <- data.frame("name" = c(levels(ships$Country_Code),
+levels(ships$Target),
+levels(ships$Event_type)))
+links <- as.data.frame(matrixlink)
+names(links) <- c("source", "target", "value")
+output$SankeyDiagram <- renderSankeyNetwork({
+sankeyNetwork(Links = links, Nodes = nodes,
+Source = "source", Target = "target",
+Value = "value", NodeID = "name",
+fontSize= 12, nodeWidth = 20)
+})
+##### Correlation Graph#####
+dataset1 <- reactive({
+dataset[(dataset$Country== input$Country),]
+})
+output$plot <- renderPlotly({
+p<- ggplot(dataset1(), aes_string(x=input$x, y=input$y)) +
+geom_count(shape= 25)+
+geom_smooth(method = "lm")
+ggplotly(p)
+#layout(height = input$plotHeight, autosize=TRUE)
+})
+######### Box Plot########
+dataset3 <- reactive({
+dataset2[(dataset2$country== input$Country1),]
+})
+output$plot <- renderPlotly({
+g<- ggplot(dataset3(), aes_string(x = input$y1 , y = input$x1)) + geom_boxplot() + ylim(50,1000)
+ggplotly(g)
+})
+# downloading data
+output$downloadData <- downloadHandler(
+filename = function() {
+paste("dataset-", Sys.Date(), ".csv", sep="")
+},
+content = function(file) {
+write.csv(Violencedata, file)
+})
+})
+shinyApp(ui = ui, server = server)
+runApp()
+runApp()
+runApp()
+library(shiny); runApp('Main Dashboard.R')
